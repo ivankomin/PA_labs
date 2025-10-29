@@ -9,6 +9,8 @@ static class Program
     const long chunkSize = 15 * 1024 * 1024;
     const int bufferSize = 8192;
     const string inputFileName = "input.txt";
+    const string fileB = "fileB.txt";
+    const string fileC = "fileC.txt";
     const string outputFileName = "output.txt";
     static Random random = new Random();
     static DateOnly startDate = new DateOnly(1970, 1, 1);
@@ -16,9 +18,8 @@ static class Program
     static void Main(string[] args)
     {
         WriteFile(inputFileName, fileSize);
-        SplitFile(inputFileName, chunkSize);
-        SortChunks();
-        MergeChunks(outputFileName);
+        SplitFile(inputFileName, fileB,fileC, 1);
+        MergeSort(fileB, fileC, outputFileName);
     }
 
     static string RandomString(int length)
@@ -65,77 +66,93 @@ static class Program
         return record;
     }
 
-    static void SplitFile(string inputFile, long chunkSize)
+    static void SplitFile(string input, string fileB, string fileC, int seriesLen)
     {
-        
-        using var reader = new StreamReader(inputFile, Encoding.UTF8, true, bufferSize);
-        int fileIndex = 0;
-        long currentChunkSize = 0;
+        using var reader = new StreamReader(input);
+        using var writerB = new StreamWriter(fileB, false, Encoding.UTF8);
+        using var writerC = new StreamWriter(fileC, false, Encoding.UTF8);
 
-        StreamWriter? writer = null;
-        
-        string? line;
-        while ((line = reader.ReadLine()) != null)
+        bool toB = true;
+        while (!reader.EndOfStream)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(line + Environment.NewLine);
-            
-            if (writer == null || currentChunkSize + bytes.Length > chunkSize)
+            for (int i = 0; i < seriesLen && !reader.EndOfStream; i++)
             {
-                writer?.Dispose();
-                writer = new StreamWriter($"chunk_{fileIndex++}.txt", false, Encoding.UTF8, bufferSize);
-                currentChunkSize = 0;
+                string? line = reader.ReadLine();
+                if (toB) writerB.WriteLine(line);
+                else writerC.WriteLine(line);
             }
-            writer.WriteLine(line);
-            currentChunkSize += bytes.Length;
-        }
-        writer?.Dispose();
-    }
-
-    static void SortChunks()
-    {
-        string[] chunks = Directory.GetFiles("C:\\Users\\ivank\\projects\\pa\\pa_lab1\\pa_lab1\\bin\\Debug\\net9.0", "chunk_*.txt");
-        foreach (var chunk in chunks)
-        {
-            var lines = File.ReadAllLines(chunk).ToList();
-            lines.Sort((a, b) =>
-            {
-                long keyA = long.Parse(a.Split(' ')[0]);
-                long keyB = long.Parse(b.Split(' ')[0]);
-                return keyB.CompareTo(keyA);
-            });
-            File.WriteAllLines(chunk, lines);
+            toB = !toB;
         }
     }
 
-    static void MergeChunks(string outputPath)
+    static List<string> ReadSeries(StreamReader reader, int count)
     {
-        var chunkPaths = Directory.GetFiles("C:\\Users\\ivank\\projects\\pa\\pa_lab1\\pa_lab1\\bin\\Debug\\net9.0", "chunk_*.txt");
-        var readers = chunkPaths.Select(path => new StreamReader(path, Encoding.UTF8, true, bufferSize)).ToList();
-        using var writer = new StreamWriter(outputPath, false, Encoding.UTF8, bufferSize);
-        var heap = new PriorityQueue<(int Index, string Line), long>();
+        var series = new List<string>(count);
+        for (int i = 0; i < count && !reader.EndOfStream; i++)
+        {
+            series.Add(reader.ReadLine()!);
+        }
+        return series;
+    }
+    
+    static List<string> MergeSeries(List<string> a, List<string> b)
+    {
+        int i = 0, j = 0;
+        var result = new List<string>(a.Count + b.Count);
 
-        void EnqueueNextLine(int index)
+        while (i < a.Count && j < b.Count)
         {
-            var reader = readers[index];
-            if (!reader.EndOfStream)
-            {
-                string line = reader.ReadLine()!;
-                long key = long.Parse(line.Split(' ')[0]);
-                heap.Enqueue((index, line), -key); 
-            }
+            long keyA = long.Parse(a[i].Split(' ')[0]);
+            long keyB = long.Parse(b[j].Split(' ')[0]);
+
+            if (keyA > keyB) 
+                result.Add(a[i++]);
+            else
+                result.Add(b[j++]);
         }
-        
-        for (int i = 0; i < readers.Count; i++)
+
+        while (i < a.Count) result.Add(a[i++]);
+        while (j < b.Count) result.Add(b[j++]);
+
+        return result;
+    }
+
+    static bool MergeStep(string fileB, string fileC, string outputFile, int seriesLen)
+    {
+        using var readerB = new StreamReader(fileB);
+        using var readerC = new StreamReader(fileC);
+        using var writer = new StreamWriter(outputFile, false, Encoding.UTF8);
+
+        bool anyMerged = false;
+        while (!readerB.EndOfStream || !readerC.EndOfStream)
         {
-            EnqueueNextLine(i);
+            var seriesB = ReadSeries(readerB, seriesLen);
+            var seriesC = ReadSeries(readerC, seriesLen);
+
+            if (seriesB.Count == 0 && seriesC.Count == 0)
+                break;
+
+            anyMerged = true;
+
+            var merged = MergeSeries(seriesB, seriesC);
+            foreach (var line in merged)
+                writer.WriteLine(line);
         }
-        while (heap.Count > 0)
+        return !anyMerged;
+    }
+    
+    static void MergeSort(string fileB, string fileC, string output)
+    {
+        long totalLines = File.ReadLines(inputFileName).LongCount();
+        int seriesLen = 1;
+
+        SplitFile(inputFileName, fileB, fileC, seriesLen);
+
+        while (seriesLen < totalLines)
         {
-            var (index, line) = heap.Dequeue();
-            writer.WriteLine(line);
-            EnqueueNextLine(index);
+            MergeStep(fileB, fileC, outputFileName, seriesLen);
+            SplitFile(outputFileName, fileB, fileC, seriesLen * 2);
+            seriesLen *= 2;
         }
-        foreach (var r in readers)
-            r.Dispose();
     }
 }
