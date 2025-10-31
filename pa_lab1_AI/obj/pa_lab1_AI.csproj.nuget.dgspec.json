@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1\\pa_lab1.csproj": {}
+    "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1\\pa_lab1.csproj": {
+    "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1\\pa_lab1.csproj",
-        "projectName": "pa_lab1",
-        "projectPath": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1\\pa_lab1.csproj",
+        "projectUniqueName": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj",
+        "projectName": "pa_lab1_AI",
+        "projectPath": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj",
         "packagesPath": "C:\\Users\\ivank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1\\obj\\",
+        "outputPath": "C:\\Users\\ivank\\coding_stuff\\PA_labs\\pa_lab1_AI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,15 @@
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\bin\Debug\net9.0\pa_lab1_AI.exe
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\bin\Debug\net9.0\pa_lab1_AI.deps.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\bin\Debug\net9.0\pa_lab1_AI.runtimeconfig.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\bin\Debug\net9.0\pa_lab1_AI.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\bin\Debug\net9.0\pa_lab1_AI.pdb
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.AssemblyInfoInputs.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.AssemblyInfo.cs
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.csproj.CoreCompileInputs.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.sourcelink.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\refint\pa_lab1_AI.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.pdb
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\pa_lab1_AI.genruntimeconfig.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab1_AI\obj\Debug\net9.0\ref\pa_lab1_AI.dll
