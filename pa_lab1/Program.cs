@@ -5,9 +5,8 @@ static class Program
     const int strLength = 20;
     const int minNumber = 1;
     const int maxNumber = 1_000_000_000;
-    const long fileSize = 1024 * 1024 * 1024;
-    const long chunkSize = 150 * 1024 * 1024;
-    const int bufferSize = 8192;
+    const long fileSize = 100 * 1024 * 1024;
+    const long chunkSize = 15 * 1024 * 1024;
     const string inputFileName = "input.txt";
     const string fileB = "fileB.txt";
     const string fileC = "fileC.txt";
@@ -19,10 +18,11 @@ static class Program
     {
         File.WriteAllText(fileB, string.Empty);
         File.WriteAllText(fileC, string.Empty);
+        //File.WriteAllText(inputFileName, string.Empty);
         File.Delete(outputFileName);
         //WriteFile(inputFileName, fileSize);
-        /*DirectMerge.SplitFile(inputFileName, fileB,fileC, 1);
-        DirectMerge.MergeSort(fileB, fileC,inputFileName, outputFileName);*/
+        //DirectMerge.SplitFile(inputFileName, fileB,fileC, 1);
+        //DirectMerge.MergeSort(fileB, fileC,inputFileName, outputFileName);
         ModifiedMerge.SplitFile(inputFileName, chunkSize);
         ModifiedMerge.SortChunks();
         ModifiedMerge.MergeChunks();
@@ -52,7 +52,7 @@ static class Program
     static void WriteFile(string fileName, long targetSizeBytes)
     {
         long writtenBytes = 0;
-        using var writer = new StreamWriter(fileName, false, Encoding.UTF8, bufferSize);
+        using var writer = new StreamWriter(fileName, false);
 
         while (writtenBytes < targetSizeBytes)
         {

@@ -39,7 +39,7 @@ public static class DirectMerge
     {
         using var readerB = new StreamReader(fileB);
         using var readerC = new StreamReader(fileC);
-        using var writer = new StreamWriter(outputFile, false, Encoding.UTF8);
+        using var writer = new StreamWriter(outputFile, false);
 
         bool anyMerged = false;
         while (!readerB.EndOfStream || !readerC.EndOfStream)
