@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj": {}
+    "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab2\\pa_lab2\\pa_lab2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj": {
+    "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab2\\pa_lab2\\pa_lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj",
-        "projectName": "pa_lab1_AI",
-        "projectPath": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab1_AI\\pa_lab1_AI.csproj",
+        "projectUniqueName": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab2\\pa_lab2\\pa_lab2.csproj",
+        "projectName": "pa_lab2",
+        "projectPath": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab2\\pa_lab2\\pa_lab2.csproj",
         "packagesPath": "C:\\Users\\ivank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab1_AI\\obj\\",
+        "outputPath": "C:\\Users\\ivank\\projects\\PA_labs\\pa_lab2\\pa_lab2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ivank\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -37,11 +37,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "imports": [
             "net461",
             "net462",
@@ -58,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\ivank\\.dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

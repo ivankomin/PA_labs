@@ -1,5 +1,4 @@
 using System.Text;
-using Microsoft.VisualBasic;
 public static class ModifiedMerge
 {
     public static void SplitFile(string inputFile, long chunkSizeBytes)
@@ -23,7 +22,7 @@ public static class ModifiedMerge
             {
                 writer?.Dispose();
                 string chunkName = $"chunk_{fileIndex++:D2}.txt";
-                writer = new StreamWriter(chunkName, false, Encoding.UTF8);
+                writer = new StreamWriter(chunkName, false);
                 writtenBytes = 0;
             }
 

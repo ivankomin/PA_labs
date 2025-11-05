@@ -4,8 +4,8 @@ public static class DirectMerge
     public static void SplitFile(string input, string fileB, string fileC, int seriesLen)
     {
         using var reader = new StreamReader(input);
-        using var writerB = new StreamWriter(fileB, false, Encoding.UTF8);
-        using var writerC = new StreamWriter(fileC, false, Encoding.UTF8);
+        using var writerB = new StreamWriter(fileB, false);
+        using var writerC = new StreamWriter(fileC, false);
 
         bool toB = true;
         while (!reader.EndOfStream)
@@ -59,7 +59,7 @@ public static class DirectMerge
         return !anyMerged;
     }
     
-     static List<string> ReadSeries(StreamReader reader, int count)
+    static List<string> ReadSeries(StreamReader reader, int count)
     {
         var series = new List<string>(count);
         for (int i = 0; i < count && !reader.EndOfStream; i++)

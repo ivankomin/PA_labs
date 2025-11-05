@@ -21,11 +21,11 @@ static class Program
         //File.WriteAllText(inputFileName, string.Empty);
         File.Delete(outputFileName);
         //WriteFile(inputFileName, fileSize);
-        //DirectMerge.SplitFile(inputFileName, fileB,fileC, 1);
-        //DirectMerge.MergeSort(fileB, fileC,inputFileName, outputFileName);
-        ModifiedMerge.SplitFile(inputFileName, chunkSize);
+        DirectMerge.SplitFile(inputFileName, fileB,fileC, 1);
+        DirectMerge.MergeSort(fileB, fileC,inputFileName, outputFileName);
+        /*ModifiedMerge.SplitFile(inputFileName, chunkSize);
         ModifiedMerge.SortChunks();
-        ModifiedMerge.MergeChunks();
+        ModifiedMerge.MergeChunks();*/
     }
 
     static string RandomString(int length)
