@@ -1,0 +1,15 @@
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\bin\Debug\net9.0\pa_lab2.exe
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\bin\Debug\net9.0\pa_lab2.deps.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\bin\Debug\net9.0\pa_lab2.runtimeconfig.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\bin\Debug\net9.0\pa_lab2.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\bin\Debug\net9.0\pa_lab2.pdb
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.AssemblyInfoInputs.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.AssemblyInfo.cs
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.csproj.CoreCompileInputs.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.sourcelink.json
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\refint\pa_lab2.dll
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.pdb
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\pa_lab2.genruntimeconfig.cache
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab2\obj\Debug\net9.0\ref\pa_lab2.dll
