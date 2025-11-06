@@ -4,7 +4,7 @@ public static class Heuristics
 {
     private static readonly int[] solution = { 4, 6, 0, 3, 1, 7, 5, 2 };
 
-    public static int F3Distance(int[] board)
+    public static int F3_Distance(int[] board)
     {
         int conflicts = 0;
         for (int i = 0; i < solution.Length; i++)

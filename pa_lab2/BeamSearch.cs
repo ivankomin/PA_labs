@@ -2,6 +2,7 @@ using pa_lab2;
 
 public class BeamSearch
 {
+    private long _generatedNodes;
     public static List<int[]> GetSuccessors(int[] board)
     {
         List<int[]> successors = new List<int[]>();
@@ -19,30 +20,46 @@ public class BeamSearch
         }
         return successors;
     }
-    public StateNode Solve(int[] initialState, Func<int[], int> heuristicFunc, int k, int maxIterations = 1000)
+    public SolveResult Solve(int[] initialState, Func<int[], int> heuristicFunc, int k, int maxIterations = 1000)
     {
+    _generatedNodes = 0;
+        
         var currentBestStates = new List<StateNode>
         {
             new StateNode(initialState, heuristicFunc)
         };
+        _generatedNodes++;
+
+        StateNode bestNodeFound = currentBestStates[0];
 
         for (int i = 0; i < maxIterations; i++)
         {
-            var bestSoFar = currentBestStates[0];
-            if (bestSoFar.Score == 0)
+            if (bestNodeFound.Score == 0)
             {
-                Console.WriteLine($"Solution found at iteration {i}");
-                return bestSoFar;
+                return new SolveResult
+                {
+                    FinalNode = bestNodeFound,
+                    Iterations = i,
+                    GeneratedNodes = _generatedNodes,
+                    NodesInMemory = k
+                };
             }
 
             var allSuccessors = new List<StateNode>();
             foreach (var state in currentBestStates)
             {
                 var successors = GetSuccessors(state.Board);
+                _generatedNodes += successors.Count;
+
                 foreach (var successorBoard in successors)
                 {
                     allSuccessors.Add(new StateNode(successorBoard, heuristicFunc));
                 }
+            }
+
+            if (allSuccessors.Count == 0)
+            {
+                return new SolveResult { FinalNode = bestNodeFound, Iterations = i, GeneratedNodes = _generatedNodes, NodesInMemory = k };
             }
 
             var nextGeneration = allSuccessors
@@ -50,15 +67,29 @@ public class BeamSearch
                 .Take(k)
                 .ToList();
 
-            if (nextGeneration.Count == 0 || nextGeneration[0].Score >= bestSoFar.Score)
+            if (nextGeneration[0].Score >= bestNodeFound.Score)
             {
-                Console.WriteLine($"Local minimum found at iteration {i}. Score = {bestSoFar.Score}");
-                return bestSoFar;
+                return new SolveResult
+                {
+                    FinalNode = bestNodeFound,
+                    Iterations = i,
+                    GeneratedNodes = _generatedNodes,
+                    NodesInMemory = k
+                };
             }
-            currentBestStates = nextGeneration;
-        }
 
-        Console.WriteLine($"Reached max iterations ({maxIterations})");
-        return currentBestStates.OrderBy(s => s.Score).First();
+            currentBestStates = nextGeneration;
+            if(currentBestStates[0].Score < bestNodeFound.Score)
+            {
+                bestNodeFound = currentBestStates[0];
+            }
+        }
+        return new SolveResult
+        {
+            FinalNode = bestNodeFound,
+            Iterations = maxIterations,
+            GeneratedNodes = _generatedNodes,
+            NodesInMemory = k
+        };
     }
 }
