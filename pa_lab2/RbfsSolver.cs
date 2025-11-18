@@ -1,7 +1,7 @@
 namespace pa_lab2;
 public class RBFSSolver
 {
-    private Func<int[], int> _heuristicFunc;
+    private Func<int[], int>? _heuristicFunc;
     private int _generatedNodes;
     private int _maxNodesInMemory;
     private List<RbfsNode> GetSuccessors(RbfsNode node)
