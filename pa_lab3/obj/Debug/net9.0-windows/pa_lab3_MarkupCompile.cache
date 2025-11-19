@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ivank\projects\PA_labs\pa_lab3\obj\Debug\net9.0-windows\
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab3\obj\Debug\net9.0-windows\
 pa_lab3
 none
 false
-TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\ivank\projects\PA_labs\pa_lab3\App.xaml
+TRACE;DEBUG;NET;NET9_0;NETCOREAPP
+C:\Users\ivank\coding_stuff\PA_labs\pa_lab3\App.xaml
 11407045341
 
 71215612708
-200-387067220
+200-1310591092
 MainWindow.xaml;
 
 False
