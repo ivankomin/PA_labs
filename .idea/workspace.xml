@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="483066bb-a7fc-4966-b7b3-76e5b2d7cd50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2025_18_27_[Changes]/pa_lab2.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2025_18_27_[Changes]/pa_lab2.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2025_18_27_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2025_18_27__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/bin/Debug/net9.0/pa_lab2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/pa_lab2.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/ref/pa_lab2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/ref/pa_lab2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/refint/pa_lab2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/Debug/net9.0/refint/pa_lab2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/pa_lab2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/pa_lab2.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/pa_lab2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/pa_lab2.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab2/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/bin/Debug/net9.0-windows/pa_lab3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3_MarkupCompile.lref" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/pa_lab3_MarkupCompile.lref" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/ref/pa_lab3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/ref/pa_lab3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/refint/pa_lab3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/Debug/net9.0-windows/refint/pa_lab3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/pa_lab3.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/pa_lab3.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/pa_lab3.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/pa_lab3.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa_lab3/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/pa_lab3/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,28 +64,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ivankomin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ivankomin&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ivankomin/PA_labs.git",
-    "accountId": "a19c1805-edb6-45e5-aefc-1c6c0cb9bdc0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ivankomin/PA_labs.git&quot;,
+    &quot;accountId&quot;: &quot;a19c1805-edb6-45e5-aefc-1c6c0cb9bdc0&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/pa_lab2/pa_lab2/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pa_lab2/pa_lab2/obj/Debug/net9.0/pa_lab2.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pa_lab2/Helpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pa_lab3/ChompAI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="354CboIs6EHoPnHO4nY2PcqTow7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,6 +94,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -59,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762360031028</updated>
       <workItem from="1762360032542" duration="30000" />
+      <workItem from="1763489834289" duration="392000" />
     </task>
     <servers />
   </component>
