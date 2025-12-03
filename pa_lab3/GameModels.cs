@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace pa_lab3
+﻿namespace pa_lab3
 {
     public enum Difficulty { Easy, Medium, Hard }
     public enum Player { User, Computer }

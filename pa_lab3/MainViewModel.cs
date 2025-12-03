@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace pa_lab3
 {
-    // --- КОМАНДА (без змін) ---
     public class RelayCommand : ICommand
     {
         private readonly Action<object?> _execute;
@@ -20,45 +16,34 @@ namespace pa_lab3
         public event EventHandler? CanExecuteChanged;
     }
 
-    // --- ОНОВЛЕНА VIEWMODEL КЛІТИНКИ ---
     public class CellVM : INotifyPropertyChanged
     {
         private bool _isActive;
-        private Player? _eatenBy; // null - активна, інакше - ким з'їдена
-        private bool _isMoveOrigin; // чи це саме та клітинка, на яку натиснули
+        private Player? _eatenBy; 
+        private bool _isMoveOrigin;
 
         public int Row { get; }
         public int Col { get; }
         public bool IsPoison => Row == 0 && Col == 0;
-
-        // Чи активна клітинка (шоколад)
         public bool IsActive
         {
             get => _isActive;
             set { _isActive = value; UpdateVisuals(); }
         }
-
-        // Хто з'їв клітинку (User або Computer)
         public Player? EatenBy
         {
             get => _eatenBy;
             set { _eatenBy = value; UpdateVisuals(); }
         }
-
-        // Чи це центр ходу (для малювання Х або О)
         public bool IsMoveOrigin
         {
             get => _isMoveOrigin;
             set { _isMoveOrigin = value; UpdateVisuals(); }
         }
-
-        // Колір фону
         public Brush BackgroundColor { get; private set; }
         
-        // Текст на клітинці (X, O, ☠)
         public string Symbol { get; private set; }
         
-        // Колір тексту
         public Brush ForegroundColor { get; private set; }
 
         public ICommand ClickCommand { get; }
@@ -80,21 +65,16 @@ namespace pa_lab3
 
         private void UpdateVisuals()
         {
-            // 1. Логіка кольору фону
             if (IsActive)
             {
                 BackgroundColor = IsPoison ? Brushes.ForestGreen : Brushes.SaddleBrown;
             }
             else
             {
-                // Якщо з'їв Гравець - Червоний відтінок, Комп'ютер - Синій
-                // Використовуємо світлі кольори, як на скріншоті
                 BackgroundColor = EatenBy == Player.User 
-                    ? new SolidColorBrush(Color.FromRgb(240, 128, 128))  // Light Coral (User)
-                    : new SolidColorBrush(Color.FromRgb(135, 206, 235)); // Sky Blue (Computer)
+                    ? new SolidColorBrush(Color.FromRgb(240, 128, 128))  
+                    : new SolidColorBrush(Color.FromRgb(135, 206, 235)); 
             }
-
-            // 2. Логіка Символу
             if (IsPoison)
             {
                 Symbol = "☠";
@@ -102,10 +82,7 @@ namespace pa_lab3
             }
             else if (!IsActive && IsMoveOrigin)
             {
-                // Якщо це центр ходу
                 Symbol = EatenBy == Player.User ? "X" : "O";
-                
-                // Колір символу (наприклад, темно-червоний для X і темно-синій для O)
                 ForegroundColor = EatenBy == Player.User ? Brushes.DarkRed : Brushes.DarkBlue;
             }
             else
@@ -124,7 +101,6 @@ namespace pa_lab3
         void OnPropertyChanged([CallerMemberName] string? name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 
-    // --- ГОЛОВНА VIEWMODEL ---
     public class MainViewModel : INotifyPropertyChanged
     {
         private GameState _gameState;
@@ -153,14 +129,13 @@ namespace pa_lab3
         public ICommand NewGameCommand { get; }
         public ICommand CellClickCommand { get; }
 
-        public MainViewModel()
+        public  MainViewModel()
         {
             _ai = new ChompAI();
             CellClickCommand = new RelayCommand(OnCellClicked);
             NewGameCommand = new RelayCommand(_ => StartNewGame());
             SelectedDifficulty = Difficulty.Medium;
             
-            // Ініціалізація сітки один раз
             for (int r = 0; r < Rows; r++)
                 for (int c = 0; c < Cols; c++)
                     Cells.Add(new CellVM(r, c, CellClickCommand));
@@ -181,11 +156,9 @@ namespace pa_lab3
         {
             if (!_isUserTurn || parameter is not CellVM cell || !cell.IsActive) return;
 
-            // 1. Хід гравця
             PerformMove(new Move(cell.Row, cell.Col), Player.User);
             if (CheckGameOver(Player.User)) return;
 
-            // 2. Хід комп'ютера
             _isUserTurn = false;
             StatusMessage = "Комп'ютер думає...";
             
@@ -205,17 +178,13 @@ namespace pa_lab3
         {
             _gameState = _gameState.MakeMove(move);
 
-            // Оновлюємо візуальний стан
             foreach(var cell in Cells)
             {
-                // Якщо клітинка була активна, але в новому стані гри вона вже неактивна
-                // значить її щойно з'їли
                 if (cell.IsActive && !_gameState.IsCellActive(cell.Row, cell.Col))
                 {
-                    cell.IsActive = false;     // Вже не шоколад
-                    cell.EatenBy = player;     // Запам'ятовуємо, хто з'їв (для кольору)
-                    
-                    // Якщо координати збігаються з ходом - це "епіцентр" (для хрестика/нулику)
+                    cell.IsActive = false;     
+                    cell.EatenBy = player;
+
                     if (cell.Row == move.Row && cell.Col == move.Col)
                     {
                         cell.IsMoveOrigin = true;

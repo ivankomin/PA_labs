@@ -1,107 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace pa_lab3
+﻿namespace pa_lab3;
+public class ChompAI
 {
-    public class ChompAI
+    private const int Infinity = 1000000;
+    private Random _rnd = new Random();
+
+    public Move GetBestMove(GameState state, Difficulty difficulty)
     {
-        // Значення "нескінченності" для початкових меж альфа і бета
-        private const int Infinity = 1000000;
-        private Random _rnd = new Random();
+        var possibleMoves = state.GetLegalMoves();
+        if (possibleMoves.Count > 1)
+            possibleMoves.RemoveAll(m => m.Row == 0 && m.Col == 0);
 
-        public Move GetBestMove(GameState state, Difficulty difficulty)
+        if (possibleMoves.Count == 0) return new Move(0, 0);
+
+        if (difficulty == Difficulty.Easy)
+            return possibleMoves[_rnd.Next(possibleMoves.Count)];
+
+        int maxDepth = difficulty == Difficulty.Medium ? 4 : 8; 
+
+        Move bestMove = possibleMoves[0];
+        int bestValue = -Infinity;
+
+        foreach (var move in possibleMoves)
         {
-            var possibleMoves = state.GetLegalMoves();
+            var nextState = state.MakeMove(move);
             
-            // Евристика: ніколи не ходити в (0,0), якщо є інші варіанти (це миттєвий програш)
-            if (possibleMoves.Count > 1)
-                possibleMoves.RemoveAll(m => m.Row == 0 && m.Col == 0);
+            int value = AlphaBeta(nextState, maxDepth - 1, -Infinity, Infinity, false);
 
-            if (possibleMoves.Count == 0) return new Move(0, 0);
+            if (value > bestValue)
+            {
+                bestValue = value;
+                bestMove = move;
+            }
+        }
+        return bestMove;
+    }
 
-            // Легкий рівень: просто випадковий хід (алгоритм не використовується)
-            if (difficulty == Difficulty.Easy)
-                return possibleMoves[_rnd.Next(possibleMoves.Count)];
+    private int AlphaBeta(GameState state, int depth, int alpha, int beta, bool isMaximizingPlayer)
+    {
+        if (state.IsGameOver()) 
+        {
+            return isMaximizingPlayer ? Infinity : -Infinity;
+        }
+        
+        if (depth == 0) return 0;
 
-            // Вибір глибини:
-            // Medium (2) - прораховує на 2 ходи вперед (хід гравця + відповідь AI)
-            // Hard (8) - глибокий пошук
-            int maxDepth = difficulty == Difficulty.Medium ? 2 : 8; 
+        var moves = state.GetLegalMoves();
 
-            Move bestMove = possibleMoves[0];
-            int bestValue = -Infinity;
+        if (moves.Count > 1) moves.RemoveAll(m => m.Row == 0 && m.Col == 0);
 
-            // Перебір всіх можливих ходів на першому рівні
-            foreach (var move in possibleMoves)
+        if (isMaximizingPlayer)
+        {
+            int maxEval = -Infinity;
+            foreach (var move in moves)
             {
                 var nextState = state.MakeMove(move);
+                int eval = AlphaBeta(nextState, depth - 1, alpha, beta, false);
                 
-                // Викликаємо алгоритм Alpha-Beta
-                // Ми зробили хід, тепер черга мінімізуючого гравця (User), тому передаємо false
-                int value = AlphaBeta(nextState, maxDepth - 1, -Infinity, Infinity, false);
+                maxEval = Math.Max(maxEval, eval);
+                alpha = Math.Max(alpha, eval);
 
-                if (value > bestValue)
-                {
-                    bestValue = value;
-                    bestMove = move;
-                }
+                if (beta <= alpha) 
+                    break;
             }
-            return bestMove;
+            return maxEval;
         }
-
-        /// <summary>
-        /// Алгоритм Альфа-Бета відсікань (Alpha-Beta Pruning)
-        /// </summary>
-        private int AlphaBeta(GameState state, int depth, int alpha, int beta, bool isMaximizingPlayer)
+        else
         {
-            // 1. Термінальні стани (кінець гри або досягнуто ліміт глибини)
-            if (state.IsGameOver()) 
+            int minEval = Infinity;
+            foreach (var move in moves)
             {
-                // Якщо зараз хід Максимізатора (AI), значить попередній (Гравець) з'їв отруту -> AI виграв (+Infinity)
-                // Якщо зараз хід Мінімізатора (Гравця), значить попередній (AI) з'їв отруту -> AI програв (-Infinity)
-                return isMaximizingPlayer ? Infinity : -Infinity;
+                var nextState = state.MakeMove(move);
+                int eval = AlphaBeta(nextState, depth - 1, alpha, beta, true);
+                
+                minEval = Math.Min(minEval, eval);
+                beta = Math.Min(beta, eval);
+
+                if (beta <= alpha) 
+                    break;
             }
-            
-            if (depth == 0) return 0; // Евристична оцінка (для цієї гри нейтральна 0, бо головне - перемога/поразка)
-
-            var moves = state.GetLegalMoves();
-            // Оптимізація: не розглядаємо хід у (0,0) як валідний варіант стратегії, якщо є вибір
-            if (moves.Count > 1) moves.RemoveAll(m => m.Row == 0 && m.Col == 0);
-
-            if (isMaximizingPlayer) // Хід AI (намагається максимізувати оцінку)
-            {
-                int maxEval = -Infinity;
-                foreach (var move in moves)
-                {
-                    var nextState = state.MakeMove(move);
-                    int eval = AlphaBeta(nextState, depth - 1, alpha, beta, false);
-                    
-                    maxEval = Math.Max(maxEval, eval);
-                    alpha = Math.Max(alpha, eval); // Оновлюємо нижню межу (Alpha)
-
-                    // --- ВІДСІКАННЯ ---
-                    if (beta <= alpha) 
-                        break; // Beta-відсікання: Мінімізатор не дозволить досягти цього стану
-                }
-                return maxEval;
-            }
-            else // Хід Гравця (намагається мінімізувати оцінку для AI)
-            {
-                int minEval = Infinity;
-                foreach (var move in moves)
-                {
-                    var nextState = state.MakeMove(move);
-                    int eval = AlphaBeta(nextState, depth - 1, alpha, beta, true);
-                    
-                    minEval = Math.Min(minEval, eval);
-                    beta = Math.Min(beta, eval); // Оновлюємо верхню межу (Beta)
-
-                    // --- ВІДСІКАННЯ ---
-                    if (beta <= alpha) 
-                        break; // Alpha-відсікання: Максимізатор вже знайшов кращий варіант в іншій гілці
-                }
-                return minEval;
-            }
+            return minEval;
         }
     }
 }
