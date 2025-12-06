@@ -45,6 +45,29 @@ public partial class MainWindow : Window
         
         DrawGraphColors();
 
+        // ... (кінець методу BtnRun_Click, перед BtnRun.IsEnabled = true;)
+
+// --- ВАРІАНТ: ЗБЕРЕЖЕННЯ У ФАЙЛ (Щоб точно побачити) ---
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        sb.AppendLine("--- ДАНІ ДЛЯ ТАБЛИЦІ 3.1 ---");
+        sb.AppendLine("Ітерація \t К-сть кольорів");
+
+        foreach (var item in _history)
+        {
+            sb.AppendLine($"{item.Iteration} \t\t {item.Colors}");
+        }
+
+// Шлях до файлу на Робочому столі
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        string filePath = System.IO.Path.Combine(desktopPath, "results_table.txt");
+
+// Записуємо
+        System.IO.File.WriteAllText(filePath, sb.ToString());
+
+// Повідомляємо, що все готово
+        MessageBox.Show($"Дані збережено у файл:\n{filePath}", "Готово!");
+
         BtnRun.IsEnabled = true;
         BtnShowChart.IsEnabled = true; 
         
