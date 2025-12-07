@@ -11,7 +11,7 @@ public class ExperimentData
 public class DataPoint
 {
     public double XValue { get; set; }
-    public double YResult { get; set; } // Цільова функція (розмір покриття)
+    public double YResult { get; set; }
 }
 
 public class GeneticParams

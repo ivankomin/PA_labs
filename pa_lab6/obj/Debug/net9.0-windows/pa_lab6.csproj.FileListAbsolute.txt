@@ -18,3 +18,4 @@ C:\Users\ivank\projects\PA_labs\pa_lab6\obj\Debug\net9.0-windows\refint\pa_lab6.
 C:\Users\ivank\projects\PA_labs\pa_lab6\obj\Debug\net9.0-windows\pa_lab6.pdb
 C:\Users\ivank\projects\PA_labs\pa_lab6\obj\Debug\net9.0-windows\pa_lab6.genruntimeconfig.cache
 C:\Users\ivank\projects\PA_labs\pa_lab6\obj\Debug\net9.0-windows\ref\pa_lab6.dll
+C:\Users\ivank\projects\PA_labs\pa_lab6\obj\Debug\net9.0-windows\pa_lab6_MarkupCompile.lref
